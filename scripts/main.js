@@ -394,15 +394,15 @@ const heroSwiper = new Swiper(".hero-slider__swiper", {
     },
 });
 //Слайдер Специальные предложения
-const specialOffersSwiper = new Swiper(".special-offers__swiper", {
+const specialOffersSwiper = new Swiper(".promo__swiper", {
     loop: true,
     speed: 600,
     slidesPerView: 1,
     spaceBetween: 20,
 
     breakpoints: {
-        576: {
-            slidesPerView: 1.1,
+        535: {
+            slidesPerView: 1.5,
             spaceBetween: 20,
         },
         768: {
@@ -414,17 +414,21 @@ const specialOffersSwiper = new Swiper(".special-offers__swiper", {
             spaceBetween: 20,
         },
         1200: {
+            slidesPerView: 3.5,
+            spaceBetween: 20,
+        },
+         1500: {
             slidesPerView: 4,
             spaceBetween: 20,
         },
     },
 
     navigation: {
-        prevEl: ".special-offers__nav--prev",
-        nextEl: ".special-offers__nav--next",
+        prevEl: ".promo__nav--prev",
+        nextEl: ".promo__nav--next",
     },
     pagination: {
-        el: ".special-offers__pagination",
+        el: ".promo__pagination",
         dynamicBullets: true,
         clickable: true,
         type: "bullets",
