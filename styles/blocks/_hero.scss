@@ -1,29 +1,5 @@
 @use "../helpers"as *;
 
-// Миксин для стилей пагинации
-@mixin pagination-styles {
-    padding: 0 20px;
-
-    .swiper-pagination-bullet {
-        border-radius: 4px;
-        width: 24px;
-        height: 4px;
-        background-color: var(--gray_1);
-        opacity: 0 !important;
-        transition: opacity 0.4s, background-color 0.2s;
-
-        &.swiper-pagination-bullet-active {
-            opacity: 1 !important;
-            background-color: var(--gray);
-        }
-
-        // Показать ближайшие соседние буллеты (активный-1, активный+1)
-        &-active-prev,
-        &-active-next {
-            opacity: 1 !important;
-        }
-    }
-}
 
 /*---------- HERO MRT (START)---------------------*/
 
@@ -35,362 +11,260 @@
     }
 }
 
-.hero-mrt {
-    &__grid {
-        display: grid;
-        grid-template-columns: calc(58% - 10px) calc(42% - 10px);
-        grid-template-rows: auto auto;
-        gap: 20px;
+.universal-hero {
+    &__content {
         margin-bottom: 20px;
-
-        @include laptop {
-            grid-template-columns: calc(50% - 10px) calc(50% - 10px);
-            grid-template-rows: auto auto;
-        }
-
-        @include laptop-s {
-            grid-template-columns: 100%;
-            grid-template-rows: auto auto auto;
-        }
-
-        @include mobile {
-            row-gap: 24px;
-            margin-bottom: 24px;
-        }
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 20px;
     }
 
-    &__main {
-        grid-row: 1 / -1;
 
-        @include laptop {
-            grid-column: 1 / -1;
-            grid-row: 1 / 2;
-            min-height: 480px;
-        }
+    &__text {
 
-        @include laptop-s {
-            min-height: max-content;
-        }
-    }
-
-    &__side {
-        &--top {
-            grid-column: 2;
-            grid-row: 1;
-
-            @include laptop {
-                grid-column: 1;
-                grid-row: 2;
-            }
-
-            @include laptop-s {
-                grid-column: 1 / -1;
-                grid-row: 2;
-            }
-        }
-
-        &--bottom {
-            grid-column: 2;
-            grid-row: 2;
-
-            @include laptop {
-                grid-column: 2;
-                grid-row: 2;
-            }
-
-            @include laptop-s {
-                grid-column: 1 /-1;
-                grid-row: 3;
-            }
-        }
-    }
-
-    &__slider,
-    &__side-slider {
-        height: 100%;
-    }
-
-    &__slide {
-        position: relative;
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
+        padding: 56px 48px;
+        background-color: var(--gray_white);
         border-radius: 40px;
-        overflow: hidden;
-        padding: 64px 48px 48px 48px;
 
-        height: 100%;
 
         @include tablet {
-            padding: 32px 32px 40px 32px;
+            width: 100%;
+            padding: 32px;
         }
 
         @include mobile {
-            padding: 32px 24px;
+            padding: 24px 16px;
         }
     }
 
-    &__content {
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-        height: 100%;
-        z-index: 2;
-    }
+    &__subtitle {
+        font-size: 14px;
+        padding: 12px;
+        font-weight: 500;
+        margin-bottom: 24px;
+        background-color: var(--white);
+        border-radius: 18px;
 
-    &__content-top {
-        margin-bottom: 48px;
+        @include tablet {
+            margin-bottom: 20px;
+        }
 
         @include mobile {
-            font-size: 32px;
+            padding: 8px 12px;
+            margin-bottom: 12px;
         }
     }
 
     &__title {
-        font-weight: 600;
-        font-size: 48px;
+        padding-bottom: 24px;
+        border-bottom: 1px solid var(--gray_1);
         line-height: 1.2;
-        color: var(--blue_black);
-        margin-bottom: 12px;
 
         @include tablet {
-            font-weight: 500;
-            font-size: 32px;
+            padding-bottom: 20px;
         }
 
         @include mobile {
-            font-size: 24px;
+            padding-bottom: 16px;
         }
     }
 
-    &__text {
-        line-height: 1.5;
-        letter-spacing: 0.01em;
-        color: var(--blue_black);
-        margin-bottom: 24px;
-        max-width: 374px;
+    &__title-highlight {
+        color: var(--blue_dark);
+    }
+
+    &__description {
+        padding-top: 27px;
+        margin-bottom: 40px;
+        line-height: 1.6;
 
         @include tablet {
             font-size: 18px;
-            line-height: 1.6;
-            margin-bottom: 16px;
+            padding-top: 20px;
         }
 
         @include mobile {
             font-size: 16px;
+            padding-top: 16px;
+            margin-bottom: 20px;
         }
     }
 
-    &__price {
-        display: inline-block;
-        border-radius: 14px;
-        padding: 10px 16px;
-        font-weight: 700;
-        font-size: 20px;
+    &__actions {
+        display: flex;
+        align-items: center;
+        gap: 20px;
+
+        @include mobile {
+            .button {
+                width: 100%;
+            }
+        }
+    }
+
+    &__note {
+        font-size: 14px;
         line-height: 1.1;
         letter-spacing: 0.01em;
-        color: var(--blue_dark);
-        background-color: var(--white);
-
-        @include tablet {
-            font-size: 18px;
-        }
+        color: var(--gray_blue_dark);
     }
 
-    &__btn {
-        max-width: max-content;
-
-        @include mobile {
-            max-width: 100%;
-        }
+    &__side-grid {
+        display: grid;
+        row-gap: 20px;
     }
 
-    &__image-bg {
-        position: absolute;
-        inset: 0;
-        width: 100%;
-        height: 100%;
-        background: var(--gray_white);
+    &__card-group {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 20px;
+
     }
 
-    &__image-wrapper {
-        width: 100%;
-        height: 100%;
-        display: block;
-    }
-
-    &__image {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-        object-position: right top;
-        display: block;
-    }
-
-    &__nav {
-        position: absolute;
-        bottom: 48px;
-        left: 250px;
-        display: flex;
-        column-gap: 16px;
-        z-index: 3;
-    }
-
-    &__arrow,
-    &__side-arrow {
-        width: 48px;
-        height: 48px;
-        border-radius: 50%;
-        background: var(--white);
-        border: none;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        pointer-events: auto;
-
-        svg {
-            display: block;
-            color: var(--blue_dark);
-            transition: color 0.2s ease;
-        }
-
-        &:hover svg,
-        &:focus-visible svg {
-            color: var(--blue_hover);
-        }
-    }
-
-    // Пагинация для основного слайдера
-    &__pagination {
-        @include pagination-styles;
-    }
-
-    &__side-slide {
-        background: var(--gray_white);
+    &__card {
+        display: grid;
         border-radius: 40px;
-        padding: 32px;
-        height: 100%;
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-        row-gap: 35px;
-    }
+        padding: 24px;
 
-    &__side-title {
-        font-weight: 600;
-        font-size: 32px;
-        line-height: 1.2;
-        letter-spacing: 0.01em;
-        color: var(--blue-dark-2);
-        margin-bottom: 12px;
+        &--info {
+            background: var(--gray_white);
+            position: relative;
+            overflow: hidden;
 
-        @include mobile {
-            font-size: 24px;
-        }
-    }
+            .universal-hero__card-title {
+                font-size: 20px;
+                font-weight: 700;
+                line-height: 1.2;
+                color: var(--blue_dark);
+                margin-bottom: 12px;
+            }
 
-    &__side-text {
-        line-height: 1.5;
-        letter-spacing: 0.01em;
-        color: var(--blue_black);
+            .universal-hero__card-desc {
+                font-size: 16px;
+                line-height: 1.3;
+                letter-spacing: 0.01em;
+                color: var(--gray_blue_dark);
+            }
 
-        @include mobile {
-            font-size: 16px;
-            line-height: 1.4;
-        }
-    }
+            &::after {
+                position: absolute;
+                content: "";
+                right: 10px;
+                bottom: 0;
+                height: 166px;
+                width: 168px;
+                background-image: url('/images/hero/doc-d.webp');
+                background-size: contain;
+                background-position: bottom right;
+                background-repeat: no-repeat;
+                z-index: 1;
+            }
 
-    &__side-btn {
-        background-color: var(--white);
-        max-width: max-content;
-
-        @include mobile {
-            max-width: 100%;
-        }
-    }
-
-    &__side-nav {
-        position: absolute;
-        bottom: 32px;
-        left: 345px;
-        display: flex;
-        column-gap: 16px;
-        z-index: 3;
-    }
-
-    // Пагинация для бокового слайдера
-    &__side-pagination {
-        @include pagination-styles;
-    }
-
-    &__promo {
-        background: var(--gray_white);
-        border-radius: 40px;
-        display: flex;
-        align-items: center;
-        position: relative;
-        overflow: hidden;
-        height: 100%;
-    }
-
-    &__promo-content {
-        max-width: 65%;
-        z-index: 2;
-        padding: 40px 0px 40px 32px;
-
-        @include mobile {
-            max-width: 88%;
-        }
-    }
-
-    &__promo-title {
-        font-weight: 600;
-        font-size: 32px;
-        line-height: 1.2;
-        letter-spacing: 0.01em;
-        color: var(--blue-dark-2);
-        margin-bottom: 16px;
-
-        @include tablet {
-            margin-bottom: 12px;
         }
 
-        @include mobile {
-            font-size: 24px;
+        &--list {
+            background: var(--light-blue);
+
+            .universal-hero__card-title {
+                font-weight: 600;
+                font-size: 20px;
+                line-height: 1.2;
+                letter-spacing: 0.01em;
+                color: var(--blue_black);
+                margin-bottom: 5px;
+            }
+
+            .universal-hero__tags {
+                margin-top: auto;
+                display: flex;
+                flex-wrap: wrap;
+                row-gap: 8px;
+                column-gap: 4px;
+            }
+
+            .universal-hero__tag {
+
+                background-color: var(--white);
+                border: var(--border-gray_light);
+                border-radius: 16px;
+                padding: 6px 11px;
+                font-weight: 500;
+                font-size: 14px;
+                line-height: 1.1;
+                letter-spacing: 0.01em;
+                text-align: center;
+
+            }
+
+            .universal-hero__tag.is-hidden {
+                display: none;
+            }
         }
+
+        &--banner {
+            padding: 40px;
+            position: relative;
+            overflow: hidden;
+            background-color: var(--gray_white);
+
+            .universal-hero__badge {
+                border-radius: 18px;
+                padding: 10px 12px;
+                height: max-content;
+                width: max-content;
+                background-color: var(--white);
+                border: var(--border-gray_light);
+
+                font-weight: 500;
+                font-size: 14px;
+                line-height: 1.1;
+                letter-spacing: 0.01em;
+                text-align: center;
+                margin-bottom: 50px;
+            }
+
+            .universal-hero__card-title {
+                font-weight: 500;
+                font-size: 32px;
+                line-height: 1.3;
+                margin-bottom: 12px;
+
+            }
+
+            .universal-hero__card-desc {
+                font-weight: 400;
+                font-size: 16px;
+
+                line-height: 1.5;
+                letter-spacing: 0.01em;
+                color: var(--gray_blue_dark);
+                margin-bottom: 24px;
+            }
+
+            .universal-hero__link {
+
+                font-weight: 600;
+                font-size: 15px;
+
+                line-height: 1.1;
+                letter-spacing: 0.01em;
+                text-decoration: underline;
+                text-decoration-skip-ink: none;
+                text-align: center;
+                color: var(--gray_blue_dark);
+                margin-top: auto;
+            }
+        }
+
     }
 
-    &__promo-text {
-        font-weight: 400;
-        font-size: 20px;
-        line-height: 1.5;
-        letter-spacing: 0.01em;
-        color: var(--blue_black);
-
-        @include mobile {
-            font-size: 16px;
-            line-height: 1.4;
-        }
-    }
-
-    &__promo-image-bg {
-        position: absolute;
-        top: 0;
-        right: 0;
-        bottom: 0;
-        max-width: 255px;
+    &__card-left {
         width: 100%;
-        background-size: contain;
-        background-position: bottom right;
-        background-repeat: no-repeat;
-        z-index: 1;
-        background-image: url("../images/hero-mrt/pro.webp");
-
-        @include mobile {
-            max-width: 120px;
-        }
+        max-width: 203px;
     }
+
 }
+
 
 /// =====================
 // HERO — Преимущества

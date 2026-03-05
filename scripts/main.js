@@ -116,6 +116,19 @@ window.addEventListener("scroll", function () {
 });
 
 document.addEventListener("DOMContentLoaded", function () {
+    // Первый блок, скрытые теги
+    const showMoreBtn = document.querySelector('.js-show-more');
+
+    if (showMoreBtn) {
+        showMoreBtn.addEventListener('click', function () {
+            const parentList = this.closest('.universal-hero__tags');
+            const hiddenTags = parentList.querySelectorAll('.is-hidden');
+
+            hiddenTags.forEach(tag => tag.classList.remove('is-hidden'));
+
+            this.remove();
+        });
+    }
 
     // Главный слайдер
 
@@ -193,7 +206,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     });
 
- 
+
 
 
 
@@ -545,9 +558,9 @@ $(function () {
 });
 
 Fancybox.bind("[data-fancybox]", {
-    gestures: false,        // ← главное: отключает свайпы/закрытие жестами
-    dragToClose: false,     // ← запрещает закрывать свайпом вниз
-    hideScrollbar: false,   // 
+    gestures: false, // ← главное: отключает свайпы/закрытие жестами
+    dragToClose: false, // ← запрещает закрывать свайпом вниз
+    hideScrollbar: false, // 
     compact: false,
     idle: false,
     infinite: true,
@@ -559,6 +572,8 @@ Fancybox.bind("[data-fancybox]", {
         },
     },
     Images: {
-        Panzoom: { maxScale: 2 },
+        Panzoom: {
+            maxScale: 2
+        },
     },
 });
