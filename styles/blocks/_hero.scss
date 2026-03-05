@@ -300,6 +300,7 @@
                 @include tablet {
                     height: 80%;
                 }
+
                 @include mobile {
                     top: 20px;
                     height: 53%;
@@ -465,6 +466,35 @@
         @include mobile {
             min-height: 86px;
         }
+
+        &:nth-child(1) .hero__features-image {
+            top: 16px;
+            right: 23px;
+            bottom: -50%;
+
+            @include tablet {
+                top: 9px;
+                right: 21px;
+            }
+
+            @include mobile {
+
+                right: 10px;
+            }
+
+            @include mobile-s {
+                top: 11px;
+                right: 55px;
+            }
+
+
+        }
+
+        &:nth-child(4) .hero__features-image {
+            top: 5px;
+            right: 29px;
+
+        }
     }
 
     &__features-title {
@@ -496,7 +526,11 @@
         background-position: bottom right;
         background-repeat: no-repeat;
         z-index: 1;
+
+
     }
+
+
 }
 
 /*---------- HERO (END)---------------------*/
