@@ -2,6 +2,7 @@
 @use './functions'as *;
 
 $laptop:1440.98;
+$laptop-l: 1279.98px;
 $laptop-s:1119.98;
 $tablet:1023.98;
 $mobile:767.98;
@@ -19,6 +20,13 @@ $mobile-s:480.98;
         @content
     }
 }
+
+@mixin laptop-l {
+    @media (width <=$laptop-l) {
+        @content
+    }
+}
+
 @mixin laptop-s {
     @media (width <=rem($laptop-s)) {
         @content

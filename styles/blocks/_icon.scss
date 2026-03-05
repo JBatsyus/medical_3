@@ -3,7 +3,7 @@
 .icon {
     display: inline-flex;
     align-items: center;
-    column-gap: 10px;
+    column-gap: 8px;
 
     &::before {
         --size: 24px;
@@ -63,6 +63,7 @@
 
     &--discount {
         column-gap: 8px;
+
         &::before {
             --size: 20px;
             background-image: url('../icons/discount.svg');

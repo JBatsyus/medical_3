@@ -17,6 +17,15 @@
         display: grid;
         grid-template-columns: 1fr 1fr;
         gap: 20px;
+
+        @include laptop-l {
+            grid-template-columns: 1fr;
+
+        }
+
+        @include tablet {
+            gap: 24px;
+        }
     }
 
 
@@ -111,13 +120,32 @@
 
     &__side-grid {
         display: grid;
-        row-gap: 20px;
+        gap: 20px;
+
+        @include laptop-l {
+            grid-template-columns: 1fr 1fr;
+        }
+
+        @include tablet {
+            grid-template-columns: 1fr;
+        }
     }
 
     &__card-group {
         display: grid;
         grid-template-columns: 1fr 1fr;
         gap: 20px;
+
+        @include laptop-l {
+            grid-template-columns: 1fr;
+        }
+
+        @include tablet {
+            grid-template-columns: 1fr 1fr;
+            gap: 16px;
+        }
+
+
 
     }
 
@@ -130,6 +158,11 @@
             background: var(--gray_white);
             position: relative;
             overflow: hidden;
+            min-height: 170px;
+
+            @include tablet {
+                max-height: 170px;
+            }
 
             .universal-hero__card-title {
                 font-size: 20px;
@@ -158,12 +191,31 @@
                 background-position: bottom right;
                 background-repeat: no-repeat;
                 z-index: 1;
+
+                @include laptop {
+                    right: -33px;
+                }
+
+                @include laptop-l {
+                    right: 10px;
+                }
+
+                @include tablet {
+                    right: -4px;
+                    bottom: -10px;
+                    background-image: url('/images/hero/doc.webp');
+                }
             }
 
         }
 
         &--list {
+            min-height: 170px;
             background: var(--light-blue);
+
+            @include tablet {
+                padding: 24px 16px;
+            }
 
             .universal-hero__card-title {
                 font-weight: 600;
@@ -193,8 +245,10 @@
                 line-height: 1.1;
                 letter-spacing: 0.01em;
                 text-align: center;
+                height: 28px;
 
             }
+
 
             .universal-hero__tag.is-hidden {
                 display: none;
@@ -206,6 +260,10 @@
             position: relative;
             overflow: hidden;
             background-color: var(--gray_white);
+
+            @include tablet {
+                padding: 32px;
+            }
 
             &::after {
                 position: absolute;
@@ -220,6 +278,10 @@
                 background-position: top right;
                 background-repeat: no-repeat;
                 z-index: 1;
+
+                @include tablet {
+                    height: 80%;
+                }
             }
 
             .universal-hero__badge {
@@ -237,6 +299,10 @@
                 text-align: center;
                 margin-bottom: 50px;
                 z-index: 2;
+
+                @include tablet {
+                    margin-bottom: 20px;
+                }
             }
 
             .universal-hero__card-title {
@@ -246,7 +312,24 @@
                 margin-bottom: 12px;
                 z-index: 2;
 
+                @include tablet {
+                    font-size: 32px;
+                    line-height: 1.2;
+                    max-width: 568px;
+                    margin-bottom: 20px;
+
+                }
+
             }
+
+            .universal-hero__card-title.highlight {
+                @include tablet {
+                    font-weight: 500;
+
+                }
+            }
+
+
 
             .universal-hero__card-desc {
                 font-weight: 400;
@@ -257,6 +340,14 @@
                 color: var(--gray_blue_dark);
                 margin-bottom: 24px;
                 z-index: 2;
+
+                @include tablet {
+                    margin-bottom: 40px;
+                    font-weight: 400;
+                    font-size: 18px;
+                    line-height: 1.6;
+
+                }
             }
 
             .universal-hero__link {
@@ -280,6 +371,10 @@
     &__card-left {
         width: 100%;
         max-width: 203px;
+
+        @include laptop-l {
+            max-width: 70%;
+        }
     }
 
 }
