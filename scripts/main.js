@@ -373,7 +373,7 @@ const specialOffersSwiper = new Swiper(".promo__swiper", {
     },
 });
 // Слайдер Доктора
-const doctorsSwiper = new Swiper(".doctors__swiper", {
+const specialistsSwiper = new Swiper(".specialists__swiper", {
     loop: true,
     speed: 600,
     slidesPerView: 1,
@@ -403,12 +403,12 @@ const doctorsSwiper = new Swiper(".doctors__swiper", {
     },
 
     navigation: {
-        prevEl: ".doctors__nav--prev",
-        nextEl: ".doctors__nav--next",
+        prevEl: ".specialists__nav--prev",
+        nextEl: ".specialists__nav--next",
     },
 
     pagination: {
-        el: ".doctors__pagination",
+        el: ".specialists__pagination",
         dynamicBullets: true,
         clickable: true,
     },

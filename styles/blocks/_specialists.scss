@@ -1,7 +1,7 @@
 @use "../helpers"as *;
-/*---------- DOCTORS (START)---------------------*/
+/*---------- specialists (START)---------------------*/
 
-.doctors {
+.specialists {
     .swiper {
         @include tablet {
             overflow: visible;
@@ -45,59 +45,28 @@
         flex-direction: column;
         width: 100%;
         height: 100%;
-        background-color: var(--gray_blue);
-        border-radius: 32px;
-        overflow: hidden;
-        padding: 24px;
-
-        @include tablet {
-            padding: 16px 16px 24px;
-        }
+        background-color: var(--white);
     }
 
     &__image-block {
         position: relative;
-        display: grid;
-        justify-content: center;
-        width: 100%;
+
         border-radius: 32px;
-        height: 280px;
+        height: 240px;
         overflow: hidden;
-        background-color: var(--white);
-        margin-bottom: 20px;
+        background-color: var(--gray_blue);
+        margin-bottom: 16px;
 
         @include tablet {
-            height: 240px;
-            border-radius: 24px;
-            margin-bottom: 16px;
+            height: 200px;
         }
 
-        .doctors__image {
-            width: auto;
-            max-width: 208px;
-            height: 100%;
-            object-fit: cover;
-            object-position: center bottom;
-            display: block;
-        }
-
-        .doctors__rating {
+        .specialists__image {
             position: absolute;
-            top: 20px;
-            left: 20px;
-            border: var(--border-gray_light);
-            border-radius: 12px;
-            padding: 6px 8px;
-            background: var(--gray_blue);
-
-            font-weight: 600;
-            font-size: 16px;
-
-            line-height: 1.1;
-            letter-spacing: 0.01em;
-            color: var(--color-secondary);
-            text-align: center;
-            z-index: 10;
+            content: "";
+            top: 12px;
+            left: 50%;
+            transform: translate(-50%);
         }
     }
 
@@ -109,56 +78,35 @@
 
     &__name {
         font-weight: 700;
-        font-size: 24px;
-        margin-bottom: 20px;
+        font-size: 20px;
+        line-height: 1.3;
+        margin-bottom: 12px;
 
         @include tablet {
-            font-size: 20px;
+            font-size: 18px;
+
+            margin-bottom: 8px;
         }
     }
 
-    &__info {
-        display: flex;
-        flex-wrap: wrap;
-        column-gap: 16px;
-        row-gap: 12px;
-        font-weight: 500;
+    &__direction {
         font-size: 16px;
-        line-height: 1;
+        line-height: 1.4;
+        letter-spacing: 0.01em;
         color: var(--gray_blue_dark);
-        margin-bottom: 50px;
-
-        @include tablet {
-            margin-bottom: 24px;
-        }
-
-        .highlight {
-            font-weight: 700;
-        }
+        margin-bottom: 16px;
     }
 
     &__bottom {
         display: flex;
         justify-content: space-between;
         align-items: center;
-        gap: 12px;
+
         margin-top: auto;
     }
 
     &__button {
         width: 100%;
-    }
-
-    &__price {
-        font-weight: 500;
-        line-height: 1.1;
-        letter-spacing: 0.01em;
-        color: var(--color-secondary);
-        border-radius: 18px;
-        padding: 16px 24px;
-        white-space: nowrap;
-
-        background-color: var(--white);
     }
 
     // Навигация
@@ -229,7 +177,8 @@
         .swiper-pagination-bullet.swiper-pagination-bullet-active {
             background-color: var(--color-primary);
         }
-          /* Скрыть буллеты, которые не являются активными или ближайшими соседями */
+
+        /* Скрыть буллеты, которые не являются активными или ближайшими соседями */
         .swiper-pagination-bullet {
             opacity: 0 !important;
             transition: opacity 0.4s;
@@ -248,4 +197,4 @@
     }
 }
 
-/*---------- DOCTORS (END)---------------------*/
+/*---------- specialists (END)---------------------*/
