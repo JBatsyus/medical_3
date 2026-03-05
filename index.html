@@ -693,7 +693,7 @@
             </div>
         </section>
         <!-- БАННЕР END -->
-        <!-- specialists START -->
+        <!-- НАШИ ВРАЧИ START -->
         <section class="specialists section" id="specialists">
             <div class="container">
 
@@ -866,7 +866,91 @@
                 </div>
             </div>
         </section>
-        <!--—specialists END-->
+        <!--—НАШИ ВРАЧИ END-->
+        <!-- ДОКУМЕНТЫ START -->
+        <section class="documents section" id="documents">
+            <div class="container">
+                <div class="documents__swiper swiper" role="region" aria-label="Слайдер документы и сертификаты">
+                    <header class="documents__head">
+                        <h2 class="documents__title h2">Документы и сертификаты</h2>
+                    </header>
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide">
+                            <div class="documents__card">
+                                <div class="documents__preview">
+                                    <a href="./images/documents/1.webp" class="documents__link"
+                                        data-fancybox="gallery" data-caption="Сертификат">
+                                        <img src="./images/documents/1-1.webp" loading="lazy" alt="Сертификат"
+                                            class="documents__img" />
+                                        <div class="documents__overlay">
+                                            <div class="documents__view-btn">
+                                                <img src="./icons/magnifier.svg" alt="Посмотреть"
+                                                    class="documents__view-icon" />
+                                                <span class="documents__view-text">Просмотреть</span>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </div>
+                                <div class="documents__content">
+                                    <h3 class="documents__title">
+                                        Успешное комплексное лечение хронической боли в спине
+                                    </h3>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="documents__card">
+                                <div class="documents__preview">
+                                    <a href="./images/documents/2-1.webp" class="documents__link"
+                                        data-fancybox="gallery" data-caption="Сертификат">
+                                        <img src="./images/documents/2.webp" loading="lazy" alt="Сертификат"
+                                            class="documents__img" />
+                                        <div class="documents__overlay">
+                                            <div class="documents__view-btn">
+                                                <img src="./icons/magnifier.svg" alt="Посмотреть"
+                                                    class="documents__view-icon" />
+                                                <span class="documents__view-text">Просмотреть</span>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </div>
+                                <div class="documents__content">
+                                    <h3 class="documents__title">
+                                        Учредительные документы
+                                    </h3>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="documents__card">
+                                <div class="documents__preview">
+                                    <a href="./images/documents/3-1.webp" class="documents__link"
+                                        data-fancybox="gallery" data-caption="Сертификат">
+                                        <img src="./images/documents/3.webp" loading="lazy" alt="Сертификат"
+                                            class="documents__img" />
+                                        <div class="documents__overlay">
+                                            <div class="documents__view-btn">
+                                                <img src="./icons/magnifier.svg" alt="Посмотреть"
+                                                    class="documents__view-icon" />
+                                                <span class="documents__view-text">Просмотреть</span>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </div>
+                                <div class="documents__content">
+                                    <h3 class="documents__title">
+                                        Регистрационные удостоверения
+                                    </h3>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Пагинация -->
+                    <div class="documents__pagination swiper-pagination visible-tablet-only"></div>
+                </div>
+            </div>
+        </section>
+        <!-- ДОКУМЕНТЫ END -->
         <!-- О КЛИНИКЕ START -->
         <section class="about-clinic section" aria-labelledby="about-title">
             <div class="container">
@@ -993,37 +1077,7 @@
             </div>
         </section>
         <!-- О КЛИНИКЕ END -->
-        <!-- БАННЕР ДОКУМЕНТЫ START -->
-        <section class="banner_documents section" id="documents">
-            <div class="container">
-                <div class="banner_documents__content">
-                    <div class="banner_documents__text">
-                        <h2 class="banner_documents__title">Профессионализм <span class="highlight">проверенный
-                                временем и подтвержденный</span> документально на всех уровнях!</h2>
-                        <p class="banner_documents__desc">
-                            Словом, делом и документом подтверждаем нашу квалификацию! Наши специалисты имеют профильное
-                            высшее образование, а медицинский центр имеет все требуемые документы для работы и
-                            организации оказания медицинских услуг населению.
-                        </p>
-                        <div class="banner_documents__actions ">
-                            <a href="./documents/stub.pdf" class="banner_documents__btn button button--primary "
-                                download="Документы">Скачать
-                                документы</a>
-                            <button type="button" class="banner_documents__btn button button--accent "
-                                data-title="Обратный звонок" data-btn="Отправить"
-                                data-micromodal-trigger="modal-1">Заказать
-                                звонок</button>
-                        </div>
-                    </div>
-                    <div class="banner_documents__image-block visible-tablet">
-                        <div class="banner_documents__image" style="background-image: url('./images/documents.webp');">
 
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-        <!-- БАННЕР ДОКУМЕНТЫ END -->
         <!-- НАШИ РАБОТЫ START -->
         <section class="our-works section" id="our-works">
             <div class="container">
@@ -1170,17 +1224,23 @@
                             <div class="faq__accordion-item">
                                 <details class="faq__accordion-details" name="faq" open="">
                                     <summary class="faq__accordion-summary">
-                                        <span class="faq__accordion-question" role="term" aria-details="faq-1">Как
-                                            подготовиться к МРТ?</span>
+                                        <span class="faq__accordion-question" role="term" aria-details="faq-1">Есть ли у
+                                            вас дневной стационар?</span>
                                         <span class="faq__accordion-toggle"></span>
                                     </summary>
                                 </details>
                                 <div class="faq__accordion-content" role="definition" id="faq-1">
                                     <div class="faq__accordion-inner">
                                         <div class="faq__accordion-body">
-                                            Да, в нашем медицинском центре MedLand работает дневной стационар. Он
-                                            позволяет пройти запланированный курс лечения или реабилитационных процедур
-                                            без круглосуточного пребывания в клинике.
+                                            <p>Да, в нашем медицинском центре MedLand работает дневной стационар. Он
+                                                позволяет пройти запланированный курс лечения или реабилитационных
+                                                процедур без круглосуточного пребывания в клинике.</p>
+                                            <p>В дневном стационаре вы сможете получать необходимые медицинские
+                                                процедуры и терапевтические мероприятия в дневное время, оставаясь под
+                                                внимательным наблюдением квалифицированного медицинского персонала. При
+                                                этом вечером и ночью вы будете находиться в привычной домашней
+                                                обстановке, что делает лечение более комфортным.</p>
+
                                         </div>
                                     </div>
                                 </div>
@@ -1188,8 +1248,8 @@
                             <div class="faq__accordion-item">
                                 <details class="faq__accordion-details" name="faq" open="">
                                     <summary class="faq__accordion-summary">
-                                        <span class="faq__accordion-question" role="term" aria-details="faq-2">Вы
-                                            принимаете детей на МРТ?</span>
+                                        <span class="faq__accordion-question" role="term" aria-details="faq-2">Как
+                                            подготовиться к УЗИ?</span>
                                         <span class="faq__accordion-toggle"></span>
                                     </summary>
                                 </details>
@@ -1211,8 +1271,8 @@
                             <div class="faq__accordion-item">
                                 <details class="faq__accordion-details" name="faq" open="">
                                     <summary class="faq__accordion-summary">
-                                        <span class="faq__accordion-question" role="term" aria-details="faq-3">МРТ это
-                                            опасно для здоровья?
+                                        <span class="faq__accordion-question" role="term" aria-details="faq-3">Вы
+                                            принимаете пациентов на дому?
                                         </span>
                                         <span class="faq__accordion-toggle"></span>
                                     </summary>
@@ -1235,8 +1295,8 @@
                             <div class="faq__accordion-item">
                                 <details class="faq__accordion-details" name="faq" open="">
                                     <summary class="faq__accordion-summary">
-                                        <span class="faq__accordion-question" role="term" aria-details="faq-4">Что нужно
-                                            взять с собой на МРТ?
+                                        <span class="faq__accordion-question" role="term" aria-details="faq-4">
+                                            Как подготовиться к приему врача ?
                                         </span>
                                         <span class="faq__accordion-toggle"></span>
                                     </summary>
@@ -1259,8 +1319,8 @@
                             <div class="faq__accordion-item">
                                 <details class="faq__accordion-details" name="faq" open="">
                                     <summary class="faq__accordion-summary">
-                                        <span class="faq__accordion-question" role="term" aria-details="faq-5">Я боюсь
-                                            МРТ, что мне делать?
+                                        <span class="faq__accordion-question" role="term" aria-details="faq-5">Возможно
+                                            ли анонимное посещение врача?
                                         </span>
                                         <span class="faq__accordion-toggle"></span>
                                     </summary>

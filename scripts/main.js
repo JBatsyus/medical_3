@@ -171,7 +171,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
 
-    // Слайдер ДО/ПОСЛЕ
+    // Слайдер НАШИ РАБОТЫ
     var ourWorksSwiper = new Swiper(".our-works__swiper", {
         loop: true,
         speed: 600,
@@ -206,7 +206,40 @@ document.addEventListener("DOMContentLoaded", function () {
 
     });
 
+   // Слайдер ДОУМЕНЫ
+    var documentsSwiper = new Swiper(".documents__swiper", {
+        loop: true,
+        speed: 600,
+        slidesPerView: 1.2,
+        spaceBetween: 16,
+        breakpoints: {
+            576: {
+                slidesPerView: 1.1,
+                spaceBetween: 16,
+            },
+            768: {
+                slidesPerView: 2,
+                spaceBetween: 20,
+            },
+            1200: {
+                slidesPerView: 3,
+                spaceBetween: 20,
+            },
+        },
 
+        navigation: {
+            prevEl: ".our-works__nav--prev",
+            nextEl: ".our-works__nav--next",
+        },
+
+        pagination: {
+            el: ".our-works__pagination",
+            dynamicBullets: true,
+            clickable: true,
+        },
+
+
+    });
 
 
 
