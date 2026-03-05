@@ -207,6 +207,21 @@
             overflow: hidden;
             background-color: var(--gray_white);
 
+            &::after {
+                position: absolute;
+                content: "";
+                top: 0;
+                right: 0px;
+
+                height: 90%;
+                width: 100%;
+                background-image: url('/images/hero/percent.svg');
+                background-size: contain;
+                background-position: top right;
+                background-repeat: no-repeat;
+                z-index: 1;
+            }
+
             .universal-hero__badge {
                 border-radius: 18px;
                 padding: 10px 12px;
@@ -221,6 +236,7 @@
                 letter-spacing: 0.01em;
                 text-align: center;
                 margin-bottom: 50px;
+                z-index: 2;
             }
 
             .universal-hero__card-title {
@@ -228,6 +244,7 @@
                 font-size: 32px;
                 line-height: 1.3;
                 margin-bottom: 12px;
+                z-index: 2;
 
             }
 
@@ -239,6 +256,7 @@
                 letter-spacing: 0.01em;
                 color: var(--gray_blue_dark);
                 margin-bottom: 24px;
+                z-index: 2;
             }
 
             .universal-hero__link {
@@ -253,6 +271,7 @@
                 text-align: center;
                 color: var(--gray_blue_dark);
                 margin-top: auto;
+                z-index: 2;
             }
         }
 
