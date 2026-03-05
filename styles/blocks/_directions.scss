@@ -1,7 +1,7 @@
 @use "../helpers"as *;
 /*---------- УСЛУГИ (START)---------------------*/
 
-.services {
+.directions {
     .swiper {
         @include tablet {
             overflow: visible;
@@ -24,40 +24,7 @@
         }
     }
 
-    &__filters {
-        display: flex;
-        gap: 12px;
 
-        margin-bottom: 32px;
-
-        @include tablet {
-
-            gap: 8px;
-            margin-bottom: 24px;
-        }
-
-        @include mobile {
-            flex-wrap: wrap;
-        }
-    }
-
-    .filter-btn {
-        border-radius: 16px;
-        padding: 10px 24px;
-        min-width: max-content;
-        max-width: max-content;
-
-        @include tablet {
-            border-radius: 14px;
-            padding: 8px 20px;
-        }
-
-        &.active {
-            background: var(--blue_dark);
-            color: var(--white);
-            border: 1px solid transparent;
-        }
-    }
 
     &__swiper {
         position: relative;
@@ -115,7 +82,7 @@
             background-size: contain;
 
             @include laptop {
-               height: 134px; 
+                height: 134px;
             }
 
             @include tablet {
@@ -138,23 +105,17 @@
         }
 
         &--image-1::after {
-            background-image: url(../images/services/1.webp);
+            background-image: url(../images/directions/1.webp);
 
-            // @include mobile {
-            //     background-image: url(../images/services/1-m.webp);
-            // }
         }
 
         &--image-2::after {
-            background-image: url(../images/services/2.webp);
+            background-image: url(../images/directions/2.webp);
         }
 
         &--image-3::after {
-            background-image: url(../images/services/3.webp);
+            background-image: url(../images/directions/3.webp);
 
-            // @include tablet {
-            //     background-image: url(../images/services/3-m.webp);
-            // }
         }
     }
 
@@ -254,26 +215,51 @@
         }
     }
 
-    // &__pagination {
-    //     display: flex;
-    //     justify-content: center;
-    //     align-items: center;
-    //     gap: 6px;
-    //     margin-top: 12px;
-    //     padding: 0 20px;
+ // Пагинация
+    &__pagination {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 6px;
+        margin-top: 12px;
+        padding: 0 20px;
 
-    //     .swiper-pagination-bullet {
-    //         border-radius: 4px;
-    //         width: 24px;
-    //         height: 4px;
-    //         background-color: var(--blue_gray);
-    //         transition: background-color 0.2s;
-    //     }
 
-    //     .swiper-pagination-bullet.swiper-pagination-bullet-active {
-    //         background-color: var(--color-primary);
-    //     }
-    // }
+        .swiper-pagination-bullet {
+            border-radius: 4px;
+            width: 24px;
+            height: 4px;
+            background-color: var(--blue_gray);
+            transition: background-color 0.2s;
+        }
+
+        .swiper-pagination-bullet.swiper-pagination-bullet-active {
+            background-color: var(--color-primary);
+        }
+
+        .swiper-pagination-bullets-dynamic {
+            overflow: hidden;
+            font-size: 0;
+        }
+
+        /* Скрыть буллеты, которые не являются активными или ближайшими соседями */
+        .swiper-pagination-bullet {
+            opacity: 0 !important;
+            transition: opacity 0.4s;
+        }
+
+        /* Показать активный буллет */
+        .swiper-pagination-bullet-active {
+            opacity: 1 !important;
+        }
+
+        /* Показать ближайшие соседние буллеты (активный-1, активный+1) */
+        .swiper-pagination-bullet-active-prev,
+        .swiper-pagination-bullet-active-next {
+            opacity: 1 !important;
+        }
+
+    }
 }
 
 /*---------- УСЛУГИ (END)---------------------*/

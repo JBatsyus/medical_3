@@ -288,111 +288,47 @@ document.addEventListener("DOMContentLoaded", function () {
             if (toggle) toggle.setAttribute("aria-expanded", "false");
         });
     });
-    // Свайпер Услуги
 
-    const filterButtons = document.querySelectorAll(".filter-btn");
-    const serviceItems = document.querySelectorAll(".service-item");
-    let currentSwiper = null;
-
-    function initSwiper() {
-        if (currentSwiper) {
-            currentSwiper.destroy(true, true);
-        }
-
-        currentSwiper = new Swiper(".services__swiper", {
-            loop: true,
-            speed: 600,
-            slidesPerView: 1.1,
-            spaceBetween: 12,
-            navigation: {
-                prevEl: ".services__nav--prev",
-                nextEl: ".services__nav--next",
-            },
-            breakpoints: {
-                576: {
-                    slidesPerView: 1.5,
-                    spaceBetween: 12
-                },
-                768: {
-                    slidesPerView: 2.05,
-                    spaceBetween: 20
-                },
-                992: {
-                    slidesPerView: 2.1,
-                    spaceBetween: 16
-                },
-                1440: {
-                    slidesPerView: 3,
-                    spaceBetween: 20
-                }
-            }
-        });
-    }
-
-    // Фильтрация карточек
-    function filterServices(category) {
-        serviceItems.forEach((item) => {
-            const categories = item.getAttribute("data-category").split(" ");
-            if (category === "all" || categories.includes(category)) {
-                item.style.display = "flex";
-            } else {
-                item.style.display = "none";
-            }
-        });
-
-        // Обновляем Swiper
-        requestAnimationFrame(() => {
-            if (currentSwiper) {
-                currentSwiper.update();
-            }
-        });
-    }
-
-    // Обработчики фильтров
-    filterButtons.forEach((button) => {
-        button.addEventListener("click", function () {
-            const category = this.getAttribute("data-filter");
-
-            // Обновляем активную кнопку
-            filterButtons.forEach((btn) => {
-                btn.classList.remove("active");
-                btn.setAttribute("aria-selected", "false");
-            });
-            this.classList.add("active");
-            this.setAttribute("aria-selected", "true");
-
-            // Фильтруем карточки
-            filterServices(category);
-        });
-    });
-
-    // Инициализация при загрузке
-    initSwiper();
-    filterServices("all");
 });
-
-//Слайдер главная секция
-const heroSwiper = new Swiper(".hero-slider__swiper", {
+// Свайпер Услуги
+const directionsSwiper = new Swiper(".directions__swiper", {
     loop: true,
-    effect: "fade",
-    fadeEffect: {
-        crossFade: true,
-    },
-    autoplay: {
-        delay: 2500,
-        disableOnInteraction: false,
-        pauseOnMouseEnter: true,
-    },
+    speed: 600,
+    slidesPerView: 1.1,
+    spaceBetween: 12,
     navigation: {
-        prevEl: ".slider__nav--prev",
-        nextEl: ".slider__nav--next",
+        prevEl: ".directions__nav--prev",
+        nextEl: ".directions__nav--next",
     },
     pagination: {
-        el: ".hero-slider__pagination",
+        el: ".directions__pagination",
         dynamicBullets: true,
         clickable: true,
+        type: "bullets",
+        bulletClass: "swiper-pagination-bullet",
+        bulletActiveClass: "swiper-pagination-bullet-active",
     },
+    breakpoints: {
+        576: {
+            slidesPerView: 1.5,
+            spaceBetween: 12
+        },
+        768: {
+            slidesPerView: 2.005,
+            spaceBetween: 16
+        },
+        992: {
+            slidesPerView: 2.1,
+            spaceBetween: 16
+        },
+        1440: {
+            slidesPerView: 3,
+            spaceBetween: 20
+        }
+    }
 });
+
+
 //Слайдер Специальные предложения
 const specialOffersSwiper = new Swiper(".promo__swiper", {
     loop: true,
@@ -417,7 +353,7 @@ const specialOffersSwiper = new Swiper(".promo__swiper", {
             slidesPerView: 3.5,
             spaceBetween: 20,
         },
-         1500: {
+        1500: {
             slidesPerView: 4,
             spaceBetween: 20,
         },

@@ -74,7 +74,7 @@
                 <nav class="header__menu" aria-label="Основное меню">
                     <ul class="header__menu-list">
                         <li class="header__menu-item"><a href="#home" class="header__menu-link">Главная</a></li>
-                        <li class="header__menu-item"><a href="#services" class="header__menu-link">Услуги</a></li>
+                        <li class="header__menu-item"><a href="#directions" class="header__menu-link">Услуги</a></li>
                         <li class="header__menu-item"><a href="#our-works" class="header__menu-link">Наши работы</a>
                         </li>
                         <li class="header__menu-item"><a href="#features" class="header__menu-link">Преимущества</a>
@@ -131,7 +131,7 @@
             <nav class="menu-mob__menu" aria-label="Мобильное меню">
                 <ul class="menu-mob__menu-list">
                     <li class="menu-mob__menu-item"><a href="#home" class="menu-mob__menu-link">Главная</a></li>
-                    <li class="menu-mob__menu-item"><a href="#services" class="menu-mob__menu-link">Услуги</a></li>
+                    <li class="menu-mob__menu-item"><a href="#directions" class="menu-mob__menu-link">Услуги</a></li>
                     <li class="menu-mob__menu-item"><a href="#our-works" class="menu-mob__menu-link">Наши работы</a>
                     </li>
                     <li class="menu-mob__menu-item"><a href="#features" class="menu-mob__menu-link">Преимущества</a>
@@ -560,13 +560,13 @@
         </section>
         <!--—SPECIAL OFFERS END-->
         <!-- УСЛУГИ START -->
-        <section class="services section" aria-labelledby="services-title" id="services">
+        <section class="directions section" aria-labelledby="directions-title" id="directions">
             <div class="container">
-                <div class="services__swiper swiper">
-                    <header class="services__head">
-                        <h2 id="services-title" class="services__title h2">Услуги</h2>
-                        <div class="services__controls visible-tablet">
-                            <button class="services__nav services__nav--prev" aria-label="Предыдущий слайд">
+                <div class="directions__swiper swiper">
+                    <header class="directions__head">
+                        <h2 id="directions-title" class="directions__title h2">Услуги</h2>
+                        <div class="directions__controls visible-tablet">
+                            <button class="directions__nav directions__nav--prev" aria-label="Предыдущий слайд">
                                 <svg width="30" height="25" viewBox="0 0 30 25" fill="none"
                                     xmlns="http://www.w3.org/2000/svg">
                                     <path fill-rule="evenodd" clip-rule="evenodd"
@@ -577,7 +577,7 @@
                                         fill="currentColor" />
                                 </svg>
                             </button>
-                            <button class="services__nav services__nav--next" aria-label="Следующий слайд">
+                            <button class="directions__nav directions__nav--next" aria-label="Следующий слайд">
                                 <svg width="30" height="25" viewBox="0 0 30 25" fill="none"
                                     xmlns="http://www.w3.org/2000/svg">
                                     <path fill-rule="evenodd" clip-rule="evenodd"
@@ -591,89 +591,72 @@
                         </div>
                     </header>
 
-                    <!-- Фильтры -->
-                    <nav class="services__filters">
-                        <button type="button" class="filter-btn active button button--accent" data-filter="all">
-                            Все
-                        </button>
-                        <button type="button" class="filter-btn button button--accent" data-filter="neurology">
-                            Неврология
-                        </button>
-                        <button type="button" class="filter-btn button button--accent" data-filter="traumatology">
-                            Травматология
-                        </button>
-                        <button type="button" class="filter-btn button button--accent" data-filter="oncology">
-                            Онкология
-                        </button>
-                        <button type="button" class="filter-btn button button--accent" data-filter="dermatology">
-                            Дерматология
-                        </button>
-                    </nav>
+
                     <div class="swiper-wrapper">
 
-                        <div class="swiper-slide service-item" data-category="all traumatology">
-                            <article class="services__card background background--image-1">
-                                <div class="services__content">
-                                    <h3 class="services__subtitle">Полная диагностика МРТ</h3>
-                                    <p class="services__desc">Анализ всех отделов и функций организма</p>
-                                    <span class="services__price">от 2799 ₽</span>
+                        <div class="swiper-slide service-item">
+                            <article class="directions__card background background--image-1">
+                                <div class="directions__content">
+                                    <h3 class="directions__subtitle">Полная диагностика</h3>
+                                    <p class="directions__desc">Анализы, УЗИ, рентген, эндоскопия и т.д.</p>
+                                    <span class="directions__price">от 2799 ₽</span>
                                 </div>
                                 <a href="javascript:void(0)" class="stretched-link" data-micromodal-trigger="modal"></a>
                             </article>
                         </div>
-                        <div class="swiper-slide service-item" data-category="all oncology">
-                            <article class="services__card background background--image-2">
-                                <div class="services__content">
-                                    <h3 class="services__subtitle">Быстрое обследование</h3>
-                                    <p class="services__desc">Исследование МРТ в день обращения</p>
-                                    <span class="services__price">от 1990 ₽</span>
+                        <div class="swiper-slide service-item">
+                            <article class="directions__card background background--image-2">
+                                <div class="directions__content">
+                                    <h3 class="directions__subtitle">Скорая помощь</h3>
+                                    <p class="directions__desc">Когда помощь требуется без задержек</p>
+                                    <span class="directions__price">от 1990 ₽</span>
                                 </div>
                             </article>
                         </div>
 
 
-                        <div class="swiper-slide service-item" data-category="all dermatology">
-                            <article class="services__card background background--image-3">
-                                <div class="services__content">
-                                    <h3 class="services__subtitle">Функциональное МРТ</h3>
-                                    <p class="services__desc">Исследования мозга в реальном времени</p>
-                                    <span class="services__price">от 999 ₽</span>
+                        <div class="swiper-slide service-item">
+                            <article class="directions__card background background--image-3">
+                                <div class="directions__content">
+                                    <h3 class="directions__subtitle">Обследование</h3>
+                                    <p class="directions__desc">Исследования мозга в реальном времени</p>
+                                    <span class="directions__price">от 999 ₽</span>
                                 </div>
                             </article>
                         </div>
-                        <div class="swiper-slide service-item" data-category="all oncology">
-                            <article class="services__card background background--image-1">
-                                <div class="services__content">
-                                    <h3 class="services__subtitle">Полная диагностика МРТ</h3>
-                                    <p class="services__desc">Анализ всех отделов и функций организма</p>
-                                    <span class="services__price">от 2799 ₽</span>
+                        <div class="swiper-slide service-item">
+                            <article class="directions__card background background--image-1">
+                                <div class="directions__content">
+                                    <h3 class="directions__subtitle">Полная диагностика МРТ</h3>
+                                    <p class="directions__desc">Осмотрим и проверим ваше здоровье</p>
+                                    <span class="directions__price">от 2799 ₽</span>
                                 </div>
                                 <a href="javascript:void(0)" class="stretched-link" data-micromodal-trigger="modal"></a>
                             </article>
                         </div>
-                        <div class="swiper-slide service-item" data-category="all dermatology">
-                            <article class="services__card background background--image-2">
-                                <div class="services__content">
-                                    <h3 class="services__subtitle">Быстрое обследование</h3>
-                                    <p class="services__desc">Исследование МРТ в день обращения</p>
-                                    <span class="services__price">от 1990 ₽</span>
+                        <div class="swiper-slide service-item">
+                            <article class="directions__card background background--image-2">
+                                <div class="directions__content">
+                                    <h3 class="directions__subtitle">Быстрое обследование</h3>
+                                    <p class="directions__desc">Исследование МРТ в день обращения</p>
+                                    <span class="directions__price">от 1990 ₽</span>
                                 </div>
                             </article>
                         </div>
 
 
-                        <div class="swiper-slide service-item" data-category="all neurology">
-                            <article class="services__card background background--image-3">
-                                <div class="services__content">
-                                    <h3 class="services__subtitle">Функциональное МРТ</h3>
-                                    <p class="services__desc">Исследования мозга в реальном времени</p>
-                                    <span class="services__price">от 999 ₽</span>
+                        <div class="swiper-slide service-item">
+                            <article class="directions__card background background--image-3">
+                                <div class="directions__content">
+                                    <h3 class="directions__subtitle">Функциональное МРТ</h3>
+                                    <p class="directions__desc">Исследования мозга в реальном времени</p>
+                                    <span class="directions__price">от 999 ₽</span>
                                 </div>
                             </article>
                         </div>
                     </div>
                     <!-- Пагинация НАДО ДОРАБОТАТЬ НА АДАПТИВЕ-->
-                    <div class="services__pagination swiper-pagination visible-tablet-only "></div>
+                    <div class="directions__pagination swiper-pagination visible-tablet-only "></div>
 
                     <!-- Навигация -->
 
@@ -690,7 +673,7 @@
                         <img src="./images/cta/cta.webp" alt="КТ и МРТ позвоночногои шейного отдела" loading="lazy">
                     </div>
                     <div class="banner-cta__text">
-                        <h3 id="banner-title" class="banner-cta__title">КТ и МРТ позвоночногои шейного отдела</h3>
+                        <h3 id="banner-title" class="banner-cta__title">Полное обследование на гормоны</h3>
                         <p class="banner-cta__desc">
                             Мы&nbsp;используем новейшие технологии и&nbsp;оборудование, чтобы обеспечить точную
                             диагностику и
@@ -1554,7 +1537,7 @@
                 <nav class="footer__menu" aria-label="Меню в футере">
                     <ul class="footer__menu-list">
                         <li class="footer__menu-item"><a href="#home" class="footer__menu-link">Главная</a></li>
-                        <li class="footer__menu-item"><a href="#services" class="footer__menu-link">Услуги</a></li>
+                        <li class="footer__menu-item"><a href="#directions" class="footer__menu-link">Услуги</a></li>
                         <li class="footer__menu-item"><a href="#our-works" class="footer__menu-link">Наши работы</a>
                         </li>
                         <li class="footer__menu-item"><a href="#features" class="footer__menu-link">Преимущества</a>
