@@ -67,6 +67,10 @@
         &::before {
             --size: 20px;
             background-image: url('../icons/discount.svg');
+
+            @include mobile {
+                --size: 16px;
+            }
         }
     }
 

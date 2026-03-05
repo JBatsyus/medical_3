@@ -70,7 +70,7 @@
         line-height: 1.2;
 
         @include tablet {
-            
+
             padding-bottom: 20px;
         }
 
@@ -129,6 +129,7 @@
 
         @include tablet {
             grid-template-columns: 1fr;
+            gap: 24px;
         }
     }
 
@@ -146,6 +147,10 @@
             gap: 16px;
         }
 
+        @include mobile {
+            grid-template-columns: 1fr;
+            gap: 24px;
+        }
 
 
     }
@@ -206,6 +211,10 @@
                     bottom: -10px;
                     background-image: url('/images/hero/doc.webp');
                 }
+
+                @include mobile {
+                    right: 22px;
+                }
             }
 
         }
@@ -216,6 +225,10 @@
 
             @include tablet {
                 padding: 24px 16px;
+            }
+
+            @include mobile {
+                padding: 24px;
             }
 
             .universal-hero__card-title {
@@ -266,6 +279,10 @@
                 padding: 32px;
             }
 
+            @include mobile {
+                padding: 32px 24px;
+            }
+
             &::after {
                 position: absolute;
                 content: "";
@@ -282,6 +299,11 @@
 
                 @include tablet {
                     height: 80%;
+                }
+                @include mobile {
+                    top: 20px;
+                    height: 53%;
+                    background-image: url('/images/hero/percent-m.svg');
                 }
             }
 
@@ -304,6 +326,13 @@
                 @include tablet {
                     margin-bottom: 20px;
                 }
+
+                @include mobile {
+                    border-radius: 16px;
+                    padding: 8px 12px;
+
+                    margin-bottom: 16px;
+                }
             }
 
             .universal-hero__card-title {
@@ -318,6 +347,13 @@
                     line-height: 1.2;
                     max-width: 500px;
                     margin-bottom: 20px;
+
+                }
+
+                @include mobile {
+                    font-size: 24px;
+                    line-height: 1.2;
+                    margin-bottom: 12px;
 
                 }
 
@@ -348,6 +384,10 @@
                     font-size: 18px;
                     line-height: 1.6;
 
+                }
+
+                @include mobile {
+                    margin-bottom: 32px;
                 }
             }
 
