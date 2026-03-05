@@ -70,6 +70,7 @@
         line-height: 1.2;
 
         @include tablet {
+            
             padding-bottom: 20px;
         }
 
@@ -315,7 +316,7 @@
                 @include tablet {
                     font-size: 32px;
                     line-height: 1.2;
-                    max-width: 568px;
+                    max-width: 500px;
                     margin-bottom: 20px;
 
                 }
