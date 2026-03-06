@@ -43,6 +43,10 @@
 
         cursor: pointer;
 
+        @include mobile {
+            row-gap: 16px;
+        }
+
         &:hover {
             .documents__overlay {
                 opacity: 1;
@@ -54,7 +58,7 @@
             }
 
             .documents__title {
-                color:var(--blue_dark);
+                color: var(--blue_dark);
             }
         }
     }
@@ -98,7 +102,7 @@
     &__preview {
         position: relative;
         background-color: var(--gray_white);
-        border-radius: 20px;
+        border-radius: 40px;
         height: 280px;
         display: flex;
         align-items: center;
@@ -106,6 +110,14 @@
         overflow: hidden;
         border: var(--border-gray_light);
 
+        @include tablet {
+            height: 240px;
+        }
+
+        @include mobile {
+            border-radius: 32px;
+            height: 200px;
+        }
     }
 
     &__link {
@@ -120,13 +132,23 @@
         top: 28px;
         bottom: -50%;
         left: 50%;
+
         transform: translateX(-50%);
         object-fit: contain;
         object-position: bottom;
         transition: 0.2s ease-in-out;
+
+        @include tablet {
+            top: 24px;
+            width: 86%;
+        }
+
+        @include mobile {
+            width: 79%;
+        }
     }
 
-    &__title {
+    &__description {
         font-weight: 600;
         font-size: 24px;
 
@@ -134,6 +156,53 @@
         letter-spacing: 0.01em;
         color: var(--blue_black);
         transition: 0.2s ease-in-out;
+
+        @include tablet {
+            font-size: 18px;
+        }
+
+        @include mobile {
+            font-size: 16px;
+        }
+    }
+
+    // Пагинация
+    &__pagination {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 6px;
+        margin-top: 12px;
+        padding: 0 20px;
+
+        .swiper-pagination-bullet {
+            border-radius: 4px;
+            width: 24px;
+            height: 4px;
+            background-color: var(--blue_gray);
+            transition: background-color 0.2s;
+        }
+
+        .swiper-pagination-bullet.swiper-pagination-bullet-active {
+            background-color: var(--color-primary);
+        }
+
+        /* Скрыть буллеты, которые не являются активными или ближайшими соседями */
+        .swiper-pagination-bullet {
+            opacity: 0 !important;
+            transition: opacity 0.4s;
+        }
+
+        /* Показать активный буллет */
+        .swiper-pagination-bullet-active {
+            opacity: 1 !important;
+        }
+
+        /* Показать ближайшие соседние буллеты (активный-1, активный+1) */
+        .swiper-pagination-bullet-active-prev,
+        .swiper-pagination-bullet-active-next {
+            opacity: 1 !important;
+        }
     }
 }
 

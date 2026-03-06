@@ -206,37 +206,35 @@ document.addEventListener("DOMContentLoaded", function () {
 
     });
 
-   // Слайдер ДОУМЕНЫ
+    // Слайдер ДОУМЕНЫ
     var documentsSwiper = new Swiper(".documents__swiper", {
         loop: true,
         speed: 600,
-        slidesPerView: 1.2,
+        slidesPerView: 1,
         spaceBetween: 16,
         breakpoints: {
             576: {
-                slidesPerView: 1.1,
+                slidesPerView: 1.8,
                 spaceBetween: 16,
             },
             768: {
-                slidesPerView: 2,
-                spaceBetween: 20,
+                slidesPerView: 2.1,
+                spaceBetween: 16,
             },
             1200: {
                 slidesPerView: 3,
                 spaceBetween: 20,
             },
         },
-
-        navigation: {
-            prevEl: ".our-works__nav--prev",
-            nextEl: ".our-works__nav--next",
-        },
-
         pagination: {
-            el: ".our-works__pagination",
+            el: ".documents__pagination",
             dynamicBullets: true,
             clickable: true,
+            type: "bullets",
+            bulletClass: "swiper-pagination-bullet",
+            bulletActiveClass: "swiper-pagination-bullet-active",
         },
+
 
 
     });
